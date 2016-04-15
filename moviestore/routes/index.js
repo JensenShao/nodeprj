@@ -114,4 +114,19 @@ router.get('/admin/list', function(req, res, next) {
 
 });
 
+router.delete('/admin/list',function(req,res,next){
+	var id = req.query.id;
+	
+	if(id){
+		Movie.remove({_id:id},function(err,movie){
+			if(err){
+				console.log(err);
+			}else{
+				console.log(res);
+				res.json({success:1});
+			}
+		});
+	}
+});
+
 module.exports = router;
