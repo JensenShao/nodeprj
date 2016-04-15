@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-md-7
+				embed(src="#{movie.flash}", allowFullScreen="true", quality="high", width="720",height="600", align="middle", type="application/xshockwave-flash")
+			.col-md-5
+				dl.dl-horizonal
+					dt Movie Name
+					dd= movie.title
+					dt Director
+					dd= movie.doctor
+					dt Country
+					dd= movie.country
+					dt Language
+					dd= movie.language
+					dt Year
+					dd= movie.year
+					dt Summary
+					dd= movie.summary
