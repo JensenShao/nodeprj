@@ -1,0 +1,25 @@
+{
+  "name": "moviestore",
+  "description": "movie store for movies",
+  "main": "",
+  "authors": [
+    "v-zhesh <v-zhesh@microsoft.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "moviestore"
+  ],
+  "homepage": "https://github.com/JensenShao/nodeprj",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
