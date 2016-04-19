@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var Movie = require('../models/movie');
 var _ = require('underscore');
-var router = express.Router();
+var router = express();
 
 mongoose.connect('mongodb://localhost/moviestore');
 
