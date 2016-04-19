@@ -15,6 +15,14 @@
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   },
+<<<<<<< HEAD
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2"
+  }
+=======
   "description": "movie store",
   "main": "app.js",
   "devDependencies": {
@@ -29,4 +37,5 @@
   ],
   "author": "",
   "license": "ISC"
+>>>>>>> 7e72411cffc7ad3b02b9aafe6240f7cd7ecfbf7f
 }
