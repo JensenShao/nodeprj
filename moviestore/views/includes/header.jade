@@ -3,3 +3,42 @@
 		.page-header
 			h1 #{title}
 			small this is header
+.navbar.navbar-default.navbar-fixed-bottom
+	.container
+		.navbar-header
+			a.navbar-brand(href="/") Movie store is coming
+		p.navbar-text.navbar-right
+			a.navbar-lin(href="#", data-toggle="modal", data-target="#signupModal") Sign Up
+			span &nbsp; | &nbsp; 
+			a.navbar-lin(href="#", data-toggle="modal", data-target="#signinModal") Sign In
+#signupModal.modal.fade
+	.modal-dialog
+		.modal-content
+			form(method="post", action="/user/signup")
+				.modal-header Sign Up
+				.modal-body
+					.form-group
+						label(for="signupName") Name
+						input#signupName.form-control(name="user[name]",type="text")
+					.form-group
+						label(for="signupPassword") Password
+						input#signupPassword.form-control(name="user[password]",type="password")
+				.modal-footer
+					button.btn.btn-default(type="button",data-dismiss="modal") Close
+					button.btn.btn-success(type="submit") Submit
+#signinModal.modal.fade
+	.modal-dialog
+		.modal-content
+			form(method="post", action="/user/signin")
+				.modal-header Sign Up
+				.modal-body
+					.form-group
+						label(for="signinName") Name
+						input#signupName.form-control(name="user[name]",type="text")
+					.form-group
+						label(for="signinPassword") Password
+						input#signupPassword.form-control(name="user[password]",type="password")
+				.modal-footer
+					button.btn.btn-default(type="button",data-dismiss="modal") Close
+					button.btn.btn-success(type="submit") Submit					
+						
