@@ -7,10 +7,16 @@
 	.container
 		.navbar-header
 			a.navbar-brand(href="/") Movie store is coming
-		p.navbar-text.navbar-right
-			a.navbar-lin(href="#", data-toggle="modal", data-target="#signupModal") Sign Up
-			span &nbsp; | &nbsp; 
-			a.navbar-lin(href="#", data-toggle="modal", data-target="#signinModal") Sign In
+		if user
+			p.navbar-text.navbar-right
+				span Weclcome, #{user.name}
+				span &nbsp; | &nbsp; 
+				a.navbar-link(href="/logout") Sign Out
+		else
+			p.navbar-text.navbar-right
+				a.navbar-lin(href="#", data-toggle="modal", data-target="#signupModal") Sign Up
+				span &nbsp; | &nbsp; 
+				a.navbar-lin(href="#", data-toggle="modal", data-target="#signinModal") Sign In
 #signupModal.modal.fade
 	.modal-dialog
 		.modal-content

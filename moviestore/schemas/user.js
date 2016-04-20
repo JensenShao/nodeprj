@@ -43,6 +43,16 @@ UserSchema.pre('save',function(next){
 	next();
 });
 
+UserSchema.methods = {
+	comparePassword:function(_password,callback){
+		if(_password === this.password){
+			callback(null,true);
+		}else{
+			callback(null,false);
+		}
+	}
+};
+
 UserSchema.statics = {
 	fetch:function(cb){
 		return this.find({})
