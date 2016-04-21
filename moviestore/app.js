@@ -21,12 +21,12 @@ mongoose.createConnection(dbUrl);
 
 // view engine setup
 app.set('port', process.env.PORT || '3000');
-app.set('views', path.join(__dirname, 'views/pages'));
+app.set('views', path.join(__dirname, './app/views/pages'));
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -85,6 +85,13 @@ app.use(function(err, req, res, next) {
 	console.log(meta + err.stack + '\n');
 	next();
 });
+
+if('development' === app.get('env')){
+	app.set('showStackError',true);
+	app.use(logger(':method :url :status'));
+	app.locals.pretty = true;
+	mongoose.set('debug',true);
+}
 
 require('./config/routes')(app);
 

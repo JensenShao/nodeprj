@@ -33,9 +33,11 @@ MovieSchema.pre('save',function(next){
 
 MovieSchema.statics = {
 	fetch:function(cb){
+		console.log('Start to fetch movie');
 		return this.find({})
 		.sort('meta.updateAt')
 		.exec(cb);
+		console.log('Fetch end');
 	},
 	findById:function(id,cb){
 		return this.findOne({
